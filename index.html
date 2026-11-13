@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CtrlBridge Privacy Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one readable column; a quiet header band with the language switch, then numbered policy sections (the numbering is the policy's own section order). */
+:root {
+  /* 主色 #deccae（使用者指定）：淺色主題當填色，文字和連結用同色系的深色 */
+  --bg: #f8f5ef;
+  --surface: #fffdf9;
+  --fg: #2a241b;
+  --muted: #6e6555;
+  --line: #e6dccb;
+  --accent: #7a6342;
+  --accent-soft: #deccae;
+  --on-soft: #3d3220;
+  --on-device: #2f6b4a;
+  --on-device-soft: #e4efe2;
+  --font-display: "Space Grotesk", "Noto Sans TC", system-ui, sans-serif;
+  --font-body: "Inter", "Noto Sans TC", system-ui, -apple-system, "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #17140f; --surface: #201c16; --fg: #efe8dc; --muted: #b5aa97; --line: #342e25;
+    --accent: #deccae; --accent-soft: #3a3226; --on-soft: #deccae; --on-device: #9fd3b2; --on-device-soft: #1d2b22;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #17140f; --surface: #201c16; --fg: #efe8dc; --muted: #b5aa97; --line: #342e25;
+  --accent: #deccae; --accent-soft: #3a3226; --on-soft: #deccae; --on-device: #9fd3b2; --on-device-soft: #1d2b22;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 44rem; margin: 0 auto; padding-block: 2.5rem 4rem; display: flex; flex-direction: column; gap: 2rem; }
+header { display: flex; flex-direction: column; gap: 1rem; }
+.top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.app { font-family: var(--font-display); font-weight: 600; font-size: 1rem; letter-spacing: 0.02em; color: var(--accent); }
+.lang { display: inline-flex; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 3px; gap: 2px; }
+.lang button {
+  font: inherit; font-size: 0.875rem; font-weight: 500; color: var(--muted);
+  background: transparent; border: 0; border-radius: 999px; padding: 0.25rem 0.9rem; cursor: pointer;
+}
+.lang button[aria-pressed="true"] { background: var(--accent-soft); color: var(--on-soft); }
+.lang button:focus-visible, .copy:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.9rem, 5vw, 2.6rem); line-height: 1.2; margin: 0; text-wrap: balance; }
+.meta { font-family: var(--font-mono); font-size: 0.8125rem; color: var(--muted); margin: 0; }
+.lead { color: var(--muted); margin: 0; max-width: 65ch; }
+.summary {
+  background: var(--on-device-soft); color: var(--fg); border-radius: 16px; padding: 1rem 1.25rem;
+  display: flex; gap: 0.75rem; align-items: flex-start;
+}
+.summary svg { flex: none; margin-top: 0.2rem; color: var(--on-device); }
+.summary p { margin: 0; font-weight: 500; }
+section { display: flex; flex-direction: column; gap: 0.75rem; }
+h2 { font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; margin: 0; display: flex; gap: 0.6rem; align-items: baseline; text-wrap: balance; }
+h2 .n { font-family: var(--font-mono); font-size: 0.875rem; color: var(--accent); font-weight: 500; }
+h3 { font-size: 1rem; font-weight: 600; margin: 0.5rem 0 0; }
+p { margin: 0; max-width: 65ch; }
+ul { margin: 0; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.4rem; max-width: 65ch; }
+li::marker { color: var(--accent); }
+.table { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 34rem; font-size: 0.9375rem; line-height: 1.6; }
+th, td { text-align: left; vertical-align: top; padding: 0.75rem 1rem; border-bottom: 1px solid var(--line); }
+tr:last-child td { border-bottom: 0; }
+th { font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+td:first-child { font-weight: 500; width: 32%; }
+.pill {
+  display: inline-block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.03em;
+  color: var(--on-device); background: var(--on-device-soft); border-radius: 999px; padding: 0.05rem 0.55rem; margin-bottom: 0.3rem;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+.contact { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+.email {
+  font-family: var(--font-mono); font-size: 0.9375rem; background: var(--surface); border: 1px solid var(--line);
+  border-radius: 10px; padding: 0.45rem 0.8rem; user-select: all; overflow-wrap: anywhere;
+}
+.copy {
+  font: inherit; font-size: 0.875rem; font-weight: 500; color: var(--on-soft); background: var(--accent-soft);
+  border: 0; border-radius: 999px; padding: 0.45rem 1rem; cursor: pointer;
+}
+footer { color: var(--muted); font-size: 0.8125rem; border-top: 1px solid var(--line); padding-top: 1.25rem; }
+@media (prefers-reduced-motion: no-preference) { .lang button { transition: background-color .2s, color .2s; } }
+</style>
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)} body{margin:0} img{max-width:100%} [hidden]{display:none!important}</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="top">
+      <span class="app">CtrlBridge</span>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" id="btn-zh" data-lang="zh" aria-pressed="true">繁體中文</button>
+        <button type="button" id="btn-en" data-lang="en" aria-pressed="false">English</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 繁體中文 -->
+  <article id="zh" lang="zh-Hant" class="doc" style="display:flex;flex-direction:column;gap:2rem">
+    <header>
+      <h1>隱私權政策</h1>
+      <p class="meta">生效日期 2026-11-13</p>
+      <p class="lead">CtrlBridge（以下稱「本 App」）讓 Android 手機使用 DualSense Wireless Controller、DualSense Edge Wireless Controller、Xbox Wireless Controller 等手把的進階功能。本政策說明本 App 會使用哪些資料、用途，以及這些資料如何處理。</p>
+    </header>
+
+    <div class="summary">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+      <p>本 App 沒有帳號系統，也沒有自己的伺服器。手把資料、擷取的聲音和設定都只在你的手機上處理，不會由本 App 收集、上傳、出售或分享。</p>
+    </div>
+
+    <section>
+      <h2><span class="n">1</span>本 App 使用的資料</h2>
+      <div class="table">
+        <table>
+          <thead><tr><th>資料</th><th>用途</th><th>處理方式</th></tr></thead>
+          <tbody>
+            <tr><td>手把的按鍵、搖桿、扳機、體感、電量</td><td>顯示手把狀態、觸發震動和扳機效果、按鍵綁定</td><td><span class="pill">只在手機上</span><br>即時處理，不儲存</td></tr>
+            <tr><td>擷取的遊戲聲音<br>（需要你同意錄音與螢幕擷取權限）</td><td>轉成震動、分流到手把喇叭、燈條隨聲音變化</td><td><span class="pill">只在手機上</span><br>即時處理，不錄製、不儲存、不傳送</td></tr>
+            <tr><td>無障礙服務讀取的手把按鍵<br>（只有藍牙模式、你自行開啟時）</td><td>本 App 在背景時，按下綁定的按鍵仍能觸發震動</td><td><span class="pill">只在手機上</span><br>只讀取手把的按鍵，不讀取螢幕內容、不讀取其他鍵盤輸入、不攔截或修改按鍵</td></tr>
+            <tr><td>設定（震動、扳機、燈光、主題等）</td><td>保存你的偏好</td><td><span class="pill">只在手機上</span><br>只有你自己匯出設定檔時才會離開手機</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>權限說明</h3>
+      <ul>
+        <li><strong>錄音、螢幕擷取</strong>：只在你開啟「聲音轉震動」「聲音分流」或燈光的「聲音」效果時使用，擷取其他 App 播放的聲音，不使用麥克風錄製周遭聲音。</li>
+        <li><strong>無障礙服務</strong>：只在藍牙模式下、你在系統設定中自行開啟時使用。開啟前本 App 會先說明並取得你的同意。</li>
+        <li><strong>USB、藍牙</strong>：與手把通訊。</li>
+        <li><strong>通知</strong>：顯示連線狀態和剩餘使用時間。</li>
+        <li><strong>Shizuku（選用）</strong>：遊戲橋接功能透過 Shizuku 在手機上建立虛擬手把，讓遊戲讀取手把，只在手機上運作。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="n">2</span>第三方服務</h2>
+      <p>本 App 使用下列 Google 服務。這些服務依各自的政策處理資料，本 App 無法取得其中的個人資料。</p>
+      <ul>
+        <li><strong>Google AdMob（廣告）</strong>：觀看獎勵廣告時，Google 可能會使用廣告 ID、裝置資訊、IP 位址等資料來提供及衡量廣告。在歐洲經濟區、英國等地區，本 App 會先詢問你的同意。你可以在手機的「設定 → Google → 廣告」重設或刪除廣告 ID。參考 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 隱私權政策</a>、<a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google 如何使用合作夥伴網站或應用程式中的資訊</a>。</li>
+        <li><strong>Google Play 帳款服務（訂閱、內購）</strong>：付款由 Google Play 處理，本 App 只會收到購買是否有效的結果，不會取得你的付款資料。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="n">3</span>兒童</h2>
+      <p>本 App 並非以 13 歲以下兒童為對象，也不會在知情的情況下收集兒童的個人資料。</p>
+    </section>
+
+    <section>
+      <h2><span class="n">4</span>政策變更</h2>
+      <p>本政策如有變更，會更新本頁並修改上方的生效日期。</p>
+    </section>
+
+    <section>
+      <h2><span class="n">5</span>聯絡方式</h2>
+      <p>對本政策有任何問題，請來信：</p>
+      <div class="contact">
+        <span class="email" id="email-zh">aethellectic.support@gmail.com</span>
+        <button type="button" class="copy" data-copy="email-zh" data-done="已複製">複製</button>
+      </div>
+    </section>
+  </article>
+
+  <!-- English -->
+  <article id="en" lang="en" class="doc" hidden style="display:flex;flex-direction:column;gap:2rem">
+    <header>
+      <h1>Privacy Policy</h1>
+      <p class="meta">Effective November 13, 2026</p>
+      <p class="lead">CtrlBridge ("the app") lets Android phones use advanced features of controllers such as the DualSense Wireless Controller, DualSense Edge Wireless Controller, and Xbox Wireless Controller. This policy explains what data the app uses, why, and how it is handled.</p>
+    </header>
+
+    <div class="summary">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+      <p>The app has no accounts and no servers of its own. Controller data, captured audio, and settings are processed only on your phone and are not collected, uploaded, sold, or shared by the app.</p>
+    </div>
+
+    <section>
+      <h2><span class="n">1</span>Data the app uses</h2>
+      <div class="table">
+        <table>
+          <thead><tr><th>Data</th><th>Purpose</th><th>Handling</th></tr></thead>
+          <tbody>
+            <tr><td>Controller buttons, sticks, triggers, motion, and battery</td><td>Showing controller status, triggering rumble and trigger effects, button bindings</td><td><span class="pill">On device only</span><br>Processed in real time; not stored</td></tr>
+            <tr><td>Captured game audio<br>(requires your consent to audio recording and screen capture)</td><td>Converting audio to haptics, routing audio to the controller speaker, light bar audio effect</td><td><span class="pill">On device only</span><br>Processed in real time; not recorded, stored, or sent</td></tr>
+            <tr><td>Controller buttons read by the accessibility service<br>(Bluetooth mode only, when you turn it on)</td><td>Triggering rumble from bound buttons while the app is in the background</td><td><span class="pill">On device only</span><br>Reads controller buttons only; does not read screen content or other keyboard input, and does not intercept or change buttons</td></tr>
+            <tr><td>Settings (rumble, triggers, lights, theme, etc.)</td><td>Saving your preferences</td><td><span class="pill">On device only</span><br>Leaves the phone only if you export a settings file yourself</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Permissions</h3>
+      <ul>
+        <li><strong>Audio recording and screen capture</strong>: used only when you turn on audio-to-haptics, audio routing, or the light bar's audio effect, to capture audio played by other apps. The microphone is not used to record your surroundings.</li>
+        <li><strong>Accessibility service</strong>: used only in Bluetooth mode when you turn it on in system settings. The app explains this and asks for your consent first.</li>
+        <li><strong>USB and Bluetooth</strong>: communicating with the controller.</li>
+        <li><strong>Notifications</strong>: showing connection status and remaining time.</li>
+        <li><strong>Shizuku (optional)</strong>: Game Bridge uses Shizuku to create a virtual controller on the phone so games can read the controller. It works only on the phone.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="n">2</span>Third-party services</h2>
+      <p>The app uses the following Google services, which handle data under their own policies. The app cannot access personal data from them.</p>
+      <ul>
+        <li><strong>Google AdMob (ads)</strong>: when you watch a rewarded ad, Google may use the advertising ID, device information, IP address, and similar data to serve and measure ads. In the EEA, the UK, and other applicable regions, the app asks for your consent first. You can reset or delete your advertising ID in your phone's Settings → Google → Ads. See the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">how Google uses information from sites or apps that use its services</a>.</li>
+        <li><strong>Google Play Billing (subscriptions and purchases)</strong>: payments are handled by Google Play. The app only receives whether a purchase is valid and never receives your payment details.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="n">3</span>Children</h2>
+      <p>The app is not directed to children under 13 and does not knowingly collect personal data from children.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">4</span>Changes</h2>
+      <p>If this policy changes, this page will be updated and the effective date above will change.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">5</span>Contact</h2>
+      <p>For questions about this policy, email:</p>
+      <div class="contact">
+        <span class="email" id="email-en">aethellectic.support@gmail.com</span>
+        <button type="button" class="copy" data-copy="email-en" data-done="Copied">Copy</button>
+      </div>
+    </section>
+  </article>
+
+  <footer>© 2026 Aethellectic · CtrlBridge</footer>
+</div>
+
+<script>
+(function () {
+  var docs = { zh: document.getElementById('zh'), en: document.getElementById('en') };
+  var btns = document.querySelectorAll('.lang button');
+  function show(lang) {
+    if (!docs[lang]) lang = 'zh';
+    for (var k in docs) {
+      docs[k].hidden = k !== lang;
+    }
+    btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
+    document.documentElement.lang = lang === 'zh' ? 'zh-Hant' : 'en';
+  }
+  function fromHash() {
+    var h = (location.hash || '').replace('#', '');
+    if (h === 'en' || h === 'zh') return h;
+    var nav = (navigator.language || '').toLowerCase();
+    return nav.indexOf('zh') === 0 ? 'zh' : 'en';
+  }
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      show(b.dataset.lang);
+      try { history.replaceState(null, '', '#' + b.dataset.lang); } catch (e) { location.hash = b.dataset.lang; }
+    });
+  });
+  window.addEventListener('hashchange', function () { show(fromHash()); });
+  show(fromHash());
+
+  document.querySelectorAll('.copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var el = document.getElementById(btn.dataset.copy);
+      var text = el.textContent.trim();
+      var label = btn.textContent;
+      function done() { btn.textContent = btn.dataset.done; setTimeout(function () { btn.textContent = label; }, 1500); }
+      function select() {
+        var r = document.createRange(); r.selectNodeContents(el);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, select);
+      } else {
+        select();
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
