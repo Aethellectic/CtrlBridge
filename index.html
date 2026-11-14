@@ -6,8 +6,16 @@
 <title>CtrlBridge Privacy Policy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
 <style>
+/* 品牌字體 Aethellectic Sans：英文、數字、基本符號；其他字元（中文、°…）由後面的字體補上 */
+@font-face {
+  font-family: "Aethellectic Sans";
+  src: url("fonts/AethellecticSans-Regular.woff") format("woff"), url("fonts/AethellecticSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 /* Layout: one readable column; a quiet header band with the language switch, then numbered policy sections (the numbering is the policy's own section order). */
 :root {
   /* 主色 #deccae（使用者指定）：淺色主題當填色，文字和連結用同色系的深色 */
@@ -21,8 +29,8 @@
   --on-soft: #3d3220;
   --on-device: #2f6b4a;
   --on-device-soft: #e4efe2;
-  --font-display: "Space Grotesk", "Noto Sans TC", system-ui, sans-serif;
-  --font-body: "Inter", "Noto Sans TC", system-ui, -apple-system, "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font-display: "Aethellectic Sans", "Noto Sans TC", system-ui, sans-serif;
+  --font-body: "Aethellectic Sans", "Noto Sans TC", system-ui, -apple-system, "PingFang TC", "Microsoft JhengHei", sans-serif;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
